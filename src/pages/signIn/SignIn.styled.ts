@@ -17,6 +17,7 @@ justifyContent: 'center',
 ul:{
   listStyleType: 'none',
   color: '#fff',
+  
 li:{
   display:'flex',
   margin:'0 15px 15px 0',
@@ -24,16 +25,27 @@ li:{
     marginRight: '15px'
   }
 }
-
 }
 }));
 
 export const RightPart = styled(Box)(() => ({
-  backgroundColor: '#0080E6',
   flex: '0 0 50%',
   height: '100vh',
   display:'flex',
-  alignItems: 'center',
-  justifyContent: 'center'
+alignItems:'center',
+  justifyContent: 'center',
+  
 }));
 
+export const FormWrapper = styled(Box)(() => ({
+margin: '0 30px',
+svg:{
+  color: '#00acee',
+},
+button:{
+  display:'block',
+  width: '100%',
+  marginTop:'15px',
+  borderRadius: '25px'
+}
+}));
