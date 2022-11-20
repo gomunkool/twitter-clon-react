@@ -1,12 +1,14 @@
 import React from 'react'
 import { Button, Typography } from '@mui/material'
 import { SingInTitle, LeftPart, RightPart, FormWrapper } from './SignIn.styled'
+import ModalSingIn from '../../components/modalSingIn/ModalSingIn'
+import ModalSingUp from '../../components/modalSingUp/modalSingUp'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import SearchIcon from '@mui/icons-material/Search'
 import PeopleIcon from '@mui/icons-material/People'
 import ForumIcon from '@mui/icons-material/Forum'
 
-function SignIn() {
+const SignIn = () => {
   return (
     <SingInTitle>
       <LeftPart>
@@ -39,8 +41,8 @@ function SignIn() {
           <Typography sx={{ typography: 'body2' }}>
             Join twitter now.
           </Typography>
-          <Button variant="contained">Sign Up</Button>
-          <Button variant="outlined">Sing In</Button>
+          <ModalSingUp />
+          <ModalSingIn />
         </FormWrapper>
       </RightPart>
     </SingInTitle>
