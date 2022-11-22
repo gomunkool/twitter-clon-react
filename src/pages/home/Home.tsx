@@ -1,7 +1,13 @@
 import React from 'react'
-import { Item, MiListItemButton, MiListItemIcon } from './Home.styled'
+import {
+  Item,
+  MiListItemButton,
+  MiListItemIcon,
+  MiIconButton,
+  ButtonPostTwit,
+} from './Home.styled'
 import { Container } from '@mui/system'
-import { Grid, List, ListItemText } from '@mui/material'
+import { Button, Grid, Hidden, List, ListItemText } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
@@ -16,6 +22,9 @@ const Home = () => {
       <Grid container spacing={2}>
         <Grid item xs={2}>
           <Item>
+            <MiIconButton>
+              <TwitterIcon />
+            </MiIconButton>
             <List
               sx={{
                 width: '100%',
@@ -26,47 +35,55 @@ const Home = () => {
             >
               <MiListItemButton>
                 <MiListItemIcon>
-                  <TwitterIcon />
-                </MiListItemIcon>
-              </MiListItemButton>
-              <MiListItemButton>
-                <MiListItemIcon>
                   <SearchIcon />
                 </MiListItemIcon>
-                <ListItemText primary="Search" />
+                <Hidden xlDown>
+                  <ListItemText primary="Search" />
+                </Hidden>
               </MiListItemButton>
               <MiListItemButton>
                 <MiListItemIcon>
                   <NotificationsNoneIcon />
                 </MiListItemIcon>
-                <ListItemText primary="Notifications" />
+                <Hidden xlDown>
+                  <ListItemText primary="Notifications" />
+                </Hidden>
               </MiListItemButton>
               <MiListItemButton>
                 <MiListItemIcon>
                   <MailOutlineIcon />
                 </MiListItemIcon>
-                <ListItemText primary="Mails" />
+                <Hidden xlDown>
+                  <ListItemText primary="Mails" />
+                </Hidden>
               </MiListItemButton>
               <MiListItemButton>
                 <MiListItemIcon>
                   <BookmarkBorderIcon />
                 </MiListItemIcon>
-                <ListItemText primary="Bookmark" />
+                <Hidden xlDown>
+                  <ListItemText primary="Bookmark" />
+                </Hidden>
               </MiListItemButton>
               <MiListItemButton>
                 <MiListItemIcon>
                   <ListAltIcon />
                 </MiListItemIcon>
-                <ListItemText primary="List" />
+                <Hidden xlDown>
+                  <ListItemText primary="List" />
+                </Hidden>
               </MiListItemButton>
               <MiListItemButton>
                 <MiListItemIcon>
                   <PersonOutlineIcon />
                 </MiListItemIcon>
-                <ListItemText primary="Person" />
+                <Hidden xlDown>
+                  <ListItemText primary="Person" />
+                </Hidden>
               </MiListItemButton>
             </List>
           </Item>
+          <ButtonPostTwit variant="contained">Twit</ButtonPostTwit>
         </Grid>
         <Grid item xs={7}>
           <Item>
