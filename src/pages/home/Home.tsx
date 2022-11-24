@@ -1,13 +1,16 @@
 import React from 'react'
 import {
-  Item,
+  HomeItem,
   MiListItemButton,
   MiListItemIcon,
   MiIconButton,
-  ButtonPostTwit,
+  ButtonPostTweet,
+  TypographyTitle,
+  CenterPartBoxSeparator,
 } from './Home.styled'
+import Twit from '../../components/twit/Tweet'
 import { Container } from '@mui/system'
-import { Button, Grid, Hidden, List, ListItemText } from '@mui/material'
+import { Grid, Hidden, List, ListItemText } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
@@ -15,13 +18,14 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline'
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder'
 import ListAltIcon from '@mui/icons-material/ListAlt'
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
+import TweetOtherPeople from '../../components/tweetOtherPeople/TweetOtherPeople'
 
 const Home = () => {
   return (
     <Container>
-      <Grid container spacing={2}>
+      <Grid container spacing={0}>
         <Grid item xs={2}>
-          <Item>
+          <HomeItem>
             <MiIconButton>
               <TwitterIcon />
             </MiIconButton>
@@ -82,17 +86,35 @@ const Home = () => {
                 </Hidden>
               </MiListItemButton>
             </List>
-          </Item>
-          <ButtonPostTwit variant="contained">Twit</ButtonPostTwit>
+          </HomeItem>
+          <ButtonPostTweet variant="contained">Tweet</ButtonPostTweet>
         </Grid>
-        <Grid item xs={7}>
-          <Item>
-            <TwitterIcon />
-            xs=4
-          </Item>
+        <Grid
+          item
+          xs={7}
+          style={{
+            borderRight: '0.5px solid #dedede',
+            borderLeft: '0.5px solid #dedede',
+            height: '100vh',
+          }}
+        >
+          <HomeItem>
+            <TypographyTitle
+              variant={'h5'}
+              sx={{
+                fontWeight: 'bold',
+                borderBottom: '0.5px solid #dedede',
+              }}
+            >
+              Home
+            </TypographyTitle>
+            <Twit />
+            <CenterPartBoxSeparator />
+            <TweetOtherPeople />
+          </HomeItem>
         </Grid>
         <Grid item xs={3}>
-          <Item>xs=4</Item>
+          <HomeItem>xs=4</HomeItem>
         </Grid>
       </Grid>
     </Container>
